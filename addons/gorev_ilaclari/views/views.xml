@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+   explicit list view definition 
+    
+    <record model="ir.ui.view" id="gorev_ilaclari.list">
+      <field name="name">Görev İlaçları</field>
+      <field name="model">gorev_ilaclari.gorev_ilaclari</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="title"/>
+          <field name="usesofMedicine"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gorev_ilaclari.action_window">
+      <field name="name">Görev İlaçları</field>
+      <field name="res_model">gorev_ilaclari.gorev_ilaclari</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.server" id="gorev_ilaclari.action_server">
+      <field name="name">Görev İlaçları</field>
+      <field name="model_id" ref="model_gorev_ilaclari_gorev_ilaclari"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <menuitem name="Görev İlaçları" id="gorev_ilaclari.menu_root"/>
+    <menuitem name="List" id="gorev_ilaclari.menu_1" parent="gorev_ilaclari.menu_root" action="gorev_ilaclari.action_window"/>
+    <menuitem name="Server to list" id="gorev_ilaclari.menu_2" parent="gorev_ilaclari.menu_root" action="gorev_ilaclari.action_server"/>
+
+  </data>
+</odoo>

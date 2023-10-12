@@ -1,0 +1,92 @@
+<odoo>
+  <data>
+    explicit list view definition
+
+    <record model="ir.ui.view" id="gorev_takip.list">
+      <field name="name">Görev Takip</field>
+      <field name="model">gorev_takip.gorev_takip</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name ="donumBasinaUcret"/>
+          <field name ="isDone"/>
+          <field name ="deneme"/>
+          <field name="adres_id"/>
+          <field name ="pilot_id"/>
+          <field name ="medicine_id"/>
+        </tree>
+      </field>
+    </record>
+    
+    
+
+
+    <record model="ir.actions.act_window" id="gorev_takip.action_window">
+      <field name="name">Görev Takip</field>
+      <field name="res_model">gorev_takip.gorev_takip</field>
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_gorev_adres" >
+      <field name="name">Adresler</field>
+      <field name="res_model">gorev.adres</field>
+      <field name="view_mode">tree,kanban,form</field>
+  </record>
+    
+  <record model="ir.actions.act_window" id="action_task_medicine" >
+    <field name="name">İlaçlar</field>
+    <field name="res_model">task.medicine</field>
+    <field name="view_mode">tree,kanban,form</field>
+</record>
+
+<record model="ir.actions.act_window" id="action_task_pilot" >
+  <field name="name">Pilotlar</field>
+  <field name="res_model">task.pilot</field>
+  <field name="view_mode">tree,kanban,form</field>
+</record>
+
+<record model="ir.actions.act_window" id="action_task_pilot" >
+  <field name="name">Pilotlar</field>
+  <field name="res_model">task.pilot</field>
+  <field name="view_mode">tree,kanban,form</field>
+</record>
+    <!-- <record model="ir.actions.server" id="gorev_takip.action_server">
+      <field name="name">Görev Takip</field>
+      <field name="model_id" ref="model_gorev_takip_gorev_takip"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,kanban,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+   
+
+
+    <menuitem name="Görev Takip" id="gorev_takip.menu_root"/>
+    <menuitem name="Görevler" id="gorev_takip.menu_1" parent="gorev_takip.menu_root" action="gorev_takip.action_window"/>
+
+    <menuitem id="menu_search_adresler"
+              name="Adresler v2"
+              parent="gorev_takip.menu_root"
+              action="action_gorev_adres"/>
+  
+    <menuitem id="menu_search_ilaclar"
+              name="İlaçlar v2"
+              parent="gorev_takip.menu_root"
+              action="action_task_medicine"/>
+
+    <menuitem id="menu_search_pilotlar"
+              name="Pilotlar v2"
+              parent="gorev_takip.menu_root"
+              action="action_task_pilot"/>
+              
+               explicit list view definition
+
+
+  </data>
+</odoo>

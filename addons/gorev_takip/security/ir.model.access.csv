@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gorev_takip_gorev_takip,access.gorev_takip.gorev_takip,model_gorev_takip_gorev_takip,base.group_user,1,1,1,1
+access_gorev_adres,access.gorev.adres,model_gorev_adres,base.group_user,1,1,1,1
+access_task_medicine,access.task.medicine,model_task_medicine,base.group_user,1,1,1,1
+access_task_pilot,access.res.users,model_task_pilot,base.group_user,1,1,1,1
