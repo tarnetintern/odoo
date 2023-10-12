@@ -3,7 +3,7 @@
 
 from odoo import fields, models
 
-#resource kullanicilari
+#resource kullanicilari v1
 class ResUsers(models.Model):
     _inherit = 'res.users'
 
