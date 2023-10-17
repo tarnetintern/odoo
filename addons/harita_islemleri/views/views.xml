@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+    explicit list view definition
+
+    <record model="ir.ui.view" id="harita_islemleri.list">
+      <field name="name">Harita Islemleri</field>
+      <field name="model">harita_islemleri.harita_islemleri</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name ="sehir"/>
+          <field name ="harita_adres"/>
+          <field name ="pilot_id"/>
+          
+        </tree>
+      </field>
+    </record>
+    
+    
+
+
+     <record model="ir.actions.act_window" id="harita_islemleri.action_window">
+      <field name="name">Harita İşlemleri</field>
+      <field name="res_model">harita_islemleri.harita_islemleri</field>
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_gorev_adres" >
+      <field name="name">Adresler</field>
+      <field name="res_model">gorev.adres</field>
+      <field name="view_mode">tree,kanban,form</field>
+  </record>
+    
+  <record model="ir.actions.act_window" id="action_task_medicine" >
+    <field name="name">İlaçlar</field>
+    <field name="res_model">task.medicine</field>
+    <field name="view_mode">tree,kanban,form</field>
+</record>
+
+<record model="ir.actions.act_window" id="action_task_pilot" >
+  <field name="name">Pilotlar</field>
+  <field name="res_model">task.pilot</field>
+  <field name="view_mode">tree,kanban,form</field>
+</record>
+
+
+
+
+
+    <menuitem name="Harita İşlemleri" id="harita_islemleri.menu_root"/>
+    <menuitem name="Görevler" id="harita_islemleri.menu_1" parent="harita_islemleri.menu_root" action="harita_islemleri.action_window"/>
+
+    <menuitem id="menu_search_adresler"
+              name="Adresler v2"
+              parent="gorev_takip.menu_root"
+              action="action_gorev_adres"/>
+  
+
+
+  </data>
+</odoo>

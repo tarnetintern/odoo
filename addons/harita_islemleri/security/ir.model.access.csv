@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_harita_islemleri,access.harita_islemleri,model_harita_islemleri_harita_islemleri,base.group_user,1,1,1,1
+access_gorev_adres,access.gorev.adres,model_gorev_adres,base.group_user,1,1,1,1
