@@ -12,7 +12,7 @@ class gorev_upload(models.Model):
     }
 
     name = fields.Char("Harita adı")
-    tarih = fields.Datetime('Date current action', default=fields.Datetime.now, required=False, readonly=False, select=True)
+    tarih = fields.Datetime('Yükleme Tarihi', default=fields.Datetime.now, required=False, readonly=False, select=True)
     #tarih = fields.datetime("Yükleme Tarihi", default=lambda self: fields.Datetime.now())
     #tarih = fields.Char("tarih")
     dosyaYukleme = fields.Binary("Dosya", attachment=True)  # Dosyayı saklamak için Binary alan
