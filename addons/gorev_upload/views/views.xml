@@ -39,8 +39,5 @@
 
     <menuitem name="Görev upload" id="gorev_upload.menu_root"/>
 
-    <menuitem name="List" id="gorev_upload.menu_1" parent="gorev_upload.menu_root" action="gorev_upload.action_window"/>
-    <menuitem name="Server to list" id="gorev_upload.menu_2" parent="gorev_upload.menu_root" action="gorev_upload.action_server"/>
-
   </data>
 </odoo>

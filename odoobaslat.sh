@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 odoo-bin --addons-path=addons,custom/odoo-apps-Modules/addons -d mydb
+python3 odoo-bin --addons-path=addons -d mydb
