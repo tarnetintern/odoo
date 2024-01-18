@@ -1,4 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_gorev_upload_gorev_upload,gorev_upload.gorev_upload,model_gorev_upload_gorev_upload,base.group_user,1,1,1,1
 access_suru_bolunmus,access.suru.bolunmus,model_suru_bolunmus,base.group_user,1,1,1,1
-access_suru_bolunmus_harita,access.suru.bolunmus.harita,model_suru_bolunmus_harita,base.group_user,1,1,1,1

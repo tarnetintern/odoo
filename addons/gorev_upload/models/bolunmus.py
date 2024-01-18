@@ -8,15 +8,11 @@ class SuruBolunmus(models.Model):
     tarih = fields.Datetime('Yükleme Tarihi', default=fields.Datetime.now)
     dosyaSahibi = fields.Char("Dosya Sahibi")
     bolunmusHaritaSayisi = fields.Integer("Bolunme Sayısı")
-    harita_ids = fields.One2many('suru.bolunmus.harita', 'bolunmus_id', string="Haritalar")
-
-class SuruBolunmusHarita(models.Model):
-    _name = 'suru.bolunmus.harita'
-    _description = 'Suru Bolunmus Harita'
-    name=fields.Char("Parca Harita Adı")
-    dosyaSahibi = fields.Char("Parca Dosya Sahibi")
-    tarih = fields.Datetime('Yükleme Tarihi', default=fields.Datetime.now)
-    bolunmusHaritaSayisi = fields.Integer("Bolunme Sayısı")
-    harita_ids = fields.One2many('suru.bolunmus.harita', 'bolunmus_id', string="Haritalar", readonly=True)
-    bolunmus_id = fields.Many2one('suru.bolunmus.harita', string="Bölünmüş Harita")
-    harita_dosyasi = fields.Binary("Dosya", attachment=True)
+    dosyaYukleme1 = fields.Binary("Dosya1", attachment=True)
+    dosyaYukleme2 = fields.Binary("Dosya2", attachment=True)
+    dosyaYukleme3 = fields.Binary("Dosya3", attachment=True)
+    dosyaYukleme4 = fields.Binary("Dosya4", attachment=True)
+    dosyaYukleme5 = fields.Binary("Dosya5", attachment=True)
+    dosyaYukleme6 = fields.Binary("Dosya6", attachment=True)
+    dosyaYukleme7 = fields.Binary("Dosya7", attachment=True)
+    
