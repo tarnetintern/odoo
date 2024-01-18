@@ -1,11 +1,22 @@
 from odoo import models, fields, api
 
-class gorev_upload_bolunmus(models.Model):
-    _name = 'gorev_upload_bolunmus.gorev_upload_bolunmus'
-    _description = 'gorev_upload_bolunmus.gorev_upload_bolunmus'
-    
+class SuruBolunmus(models.Model):
+    _name = 'suru.bolunmus'
+    _description = 'Suru Bolunmus'
+
     name = fields.Char("Bolunmus Harita Adı")
-    tarih = fields.Datetime('Yükleme Tarihi', default=fields.Datetime.now, required=False, readonly=False, select=True)
+    tarih = fields.Datetime('Yükleme Tarihi', default=fields.Datetime.now)
     dosyaSahibi = fields.Char("Dosya Sahibi")
-    bolunmusHaritaSayisi=fields.Integer("Bolunme Sayısı")
-    #pilot_task_ids = fields.Many2one('gorev_takip.gorev_takip',string ='Görev(İsteğe Bağlı) ',required=False)
+    bolunmusHaritaSayisi = fields.Integer("Bolunme Sayısı")
+    harita_ids = fields.One2many('suru.bolunmus.harita', 'bolunmus_id', string="Haritalar")
+
+class SuruBolunmusHarita(models.Model):
+    _name = 'suru.bolunmus.harita'
+    _description = 'Suru Bolunmus Harita'
+    name=fields.Char("Parca Harita Adı")
+    dosyaSahibi = fields.Char("Parca Dosya Sahibi")
+    tarih = fields.Datetime('Yükleme Tarihi', default=fields.Datetime.now)
+    bolunmusHaritaSayisi = fields.Integer("Bolunme Sayısı")
+    harita_ids = fields.One2many('suru.bolunmus.harita', 'bolunmus_id', string="Haritalar", readonly=True)
+    bolunmus_id = fields.Many2one('suru.bolunmus.harita', string="Bölünmüş Harita")
+    harita_dosyasi = fields.Binary("Dosya", attachment=True)

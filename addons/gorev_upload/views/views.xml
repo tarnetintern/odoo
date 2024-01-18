@@ -24,20 +24,30 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <record model="ir.actions.server" id="gorev_upload.action_server">
-      <field name="name">Görev upload</field>
-      <field name="model_id" ref="model_gorev_upload_gorev_upload"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
+    <record model="ir.actions.act_window" id="action_suru_bolunmus" >
+     <field name="name">Bolunmus</field>
+     <field name="res_model">suru.bolunmus</field>
+     <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_suru_bolunmus_harita" >
+     <field name="name">Bolunmus Haritalar</field>
+     <field name="res_model">suru.bolunmus.harita</field>
+     <field name="view_mode">tree,kanban,form</field>
     </record>
 
     <menuitem name="Görev upload" id="gorev_upload.menu_root"/>
+    <menuitem name="Haritalar" id="gorev_upload.menu_1" parent="gorev_upload.menu_root" action="gorev_upload.action_window"/>
+
+    <menuitem id="menu_search_bolunmus"
+              name="Sürü"
+              parent="gorev_upload.menu_root"
+              action="action_suru_bolunmus"/>
+    <menuitem id="menu_search_bolunmus_harita"
+              name="Sürü Haritalar"
+              parent="gorev_upload.menu_root"
+              action="action_suru_bolunmus_harita"/>
+       
 
   </data>
 </odoo>
